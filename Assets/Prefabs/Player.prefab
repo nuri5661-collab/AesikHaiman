@@ -1,0 +1,728 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2119984552835825616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8717569944576962124}
+  - component: {fileID: 837479955989334921}
+  - component: {fileID: 1380252284619992005}
+  m_Layer: 0
+  m_Name: AttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8717569944576962124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119984552835825616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6504173919900506309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &837479955989334921
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119984552835825616}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1.5}
+  m_EdgeRadius: 0
+--- !u!114 &1380252284619992005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119984552835825616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801d069457e18244fbc9b8082e2aff16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Player.AttackHitbox
+  hitEffectPrefab: {fileID: 8688113737790132040, guid: 434440136c648df4db5ad835c4479ef8, type: 3}
+--- !u!1 &4631935601686116236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738493889494511053}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1738493889494511053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631935601686116236}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6504173919900506309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5302959497640964077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6504173919900506309}
+  - component: {fileID: 1843580707977106672}
+  - component: {fileID: 7064217263271521571}
+  - component: {fileID: 6448654281683274643}
+  - component: {fileID: 3462112091737015693}
+  - component: {fileID: 1153039671220715256}
+  - component: {fileID: 5508709404990643900}
+  - component: {fileID: 2327020391672854686}
+  - component: {fileID: 8954596775857525567}
+  - component: {fileID: 1484512292511135084}
+  - component: {fileID: 1988563650948956130}
+  - component: {fileID: 362780105961035826}
+  - component: {fileID: 7653269904797606269}
+  - component: {fileID: 4483773432258849939}
+  - component: {fileID: 9145919230301810300}
+  - component: {fileID: 3198967354958371578}
+  - component: {fileID: 1706932107233269660}
+  - component: {fileID: 7961508659502573619}
+  - component: {fileID: 3716372014887153841}
+  - component: {fileID: 4708398151272003141}
+  - component: {fileID: 698111733093990867}
+  - component: {fileID: 6163911781813372849}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6504173919900506309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1738493889494511053}
+  - {fileID: 8717569944576962124}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1843580707977106672
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 6afe7c7fd5cd2744a84ff3deab08171c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.34, y: 3.54}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!50 &7064217263271521571
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &6448654281683274643
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
+--- !u!95 &3462112091737015693
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bf12daf2a26874bbbf57abf5ab610c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1153039671220715256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa24240c5d6259489befedda2d6d1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Player.PlayerHealth
+  maxHp: 100
+  currentHp: 0
+  maxMana: 100
+  currentMana: 0
+  invincibleDuration: 0.8
+  knockbackDuration: 0.2
+  defaultKnockbackForce: 8
+  targetRenderer: {fileID: 1843580707977106672}
+  blinkInterval: 0.1
+  onHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onManaChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5508709404990643900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89921cad81cbbdc40854ac85944dc569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Player.SuperArmorState
+  defaultDuration: 3
+--- !u!114 &2327020391672854686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9284987b7e17dc4c8f782609ac27ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Systems.RainGaugeSystem
+  maxGauge: 100
+  currentGauge: 0
+  gaugeGainPerSecondHeld: 15
+  enablePassiveDecay: 0
+  passiveDecayPerSecond: 2
+  gaugeTiers:
+  - thresholdPercent: 0
+    multiplier: 1
+  - thresholdPercent: 33
+    multiplier: 1.2
+  - thresholdPercent: 66
+    multiplier: 1.5
+  - thresholdPercent: 100
+    multiplier: 2
+  onGaugeChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8954596775857525567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59923a100ffb4554cbac5fb88b41c55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Systems.BuffSystem
+  onBuffsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1484512292511135084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7f87af2895d804a99180037d014e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Systems.HealSystem
+--- !u!114 &1988563650948956130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb25c8de87a5be745b04b9a4436b86d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Systems.AllyGroup
+--- !u!114 &362780105961035826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b8cb80368e4e8458f9585cb03d3670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SkillManager
+  slotBindings:
+  - slot: 0
+    inputKey: 113
+    equippedSkill: {fileID: 7653269904797606269}
+  - slot: 1
+    inputKey: 119
+    equippedSkill: {fileID: 0}
+  - slot: 2
+    inputKey: 101
+    equippedSkill: {fileID: 0}
+  - slot: 3
+    inputKey: 114
+    equippedSkill: {fileID: 0}
+  - slot: 4
+    inputKey: 0
+    equippedSkill: {fileID: 0}
+  jobLineSkillSets:
+  - jobLine: 1
+    skills:
+    - {fileID: 1706932107233269660}
+    - {fileID: 7961508659502573619}
+    - {fileID: 3716372014887153841}
+    - {fileID: 4708398151272003141}
+    - {fileID: 698111733093990867}
+  currentJobLine: 1
+--- !u!114 &7653269904797606269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f07d2052305e94dade60bbb99bf989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.Examples.Skill_WaterSplash_Example
+  skillName: New Skill
+  slot: 0
+  jobLine: 0
+  cooldown: 1
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  baseDamage: 20
+  radius: 2
+--- !u!114 &4483773432258849939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da6e58acc08ae64181f349e84620eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Player.PlayerController
+  moveSpeed: 6
+  leftKeys: 1401000004010000
+  rightKeys: 1301000006010000
+  jumpForce: 12
+  jumpKeys: 110100000801000020000000
+  allowDoubleJump: 1
+  groundCheck: {fileID: 1738493889494511053}
+  groundCheckRadius: 0.15
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  attackKey: 122
+  comboResetTime: 0.8
+  comboDamages:
+  - 10
+  - 12
+  - 18
+  attackHitbox: {fileID: 1380252284619992005}
+  attackHitboxActiveDuration: 0.15
+  specialAttackKey: 120
+  specialComboWindow: 0.5
+  spinHoldThreshold: 0.12
+  maxSpinDuration: 1.5
+  spinDropletInterval: 0.15
+  manaCostPerDroplet: 1
+  stabDamage: 8
+  openDamage: 10
+  dropletDamage: 4
+  dropletGaugeGain: 1
+  dropletProjectilePrefab: {fileID: 6173081668378525346, guid: 0413ef5b5ea61af42ac2fb8fb9e04035, type: 3}
+  stageMinX: -14
+  stageMaxX: 14
+  stageMinY: -5
+  stageMaxY: 10
+--- !u!114 &9145919230301810300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c619c25ca84574daa274b38e2e65a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.DebugTools.DebugHitTester
+  targetHealth: {fileID: 1153039671220715256}
+  testHitKey: 104
+  testDamage: 10
+  testKnockbackForce: 8
+--- !u!114 &3198967354958371578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69acb4ce767d0b4d940e60d89fad147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.DebugTools.DebugBuffHealTester
+  buffSystem: {fileID: 8954596775857525567}
+  healSystem: {fileID: 1484512292511135084}
+  testAttackBuff: {fileID: 0}
+  testBuffKey: 98
+  testHealKey: 110
+  testManaKey: 109
+  testHealAmount: 20
+  testManaAmount: 20
+  testManaDuration: 3
+--- !u!114 &1706932107233269660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6fe1f235be73648af8e64e26595e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SpaGuardian.Skill_SplishSplash
+  skillName: "\uCCA8\uBC99\uCCA8\uBC99"
+  slot: 0
+  jobLine: 1
+  cooldown: 6
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  superArmorDuration: 1.5
+  hopForce: 9
+  hopInterval: 0.4
+  splashRadius: 2.5
+  splashDamage: 8
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  splashEffectPrefab: {fileID: 2543527779577014272, guid: fcf68d3845cdefa4a909cf00cb5f9ce8, type: 3}
+--- !u!114 &7961508659502573619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a42e7482c4b9a543905ce98eacdd0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SpaGuardian.Skill_EatEgg
+  skillName: "\uACC4\uB780 \uBA39\uC5B4"
+  slot: 1
+  jobLine: 1
+  cooldown: 10
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  enemyDamage: 15
+  enemyRadius: 2
+  allySuperArmorDuration: 2
+  allyHealAmount: 15
+  damageReductionBuff: {fileID: 0}
+  damageReductionValue: 0.3
+  damageReductionDuration: 8
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  eggEffectPrefab: {fileID: 5224244789617438592, guid: 029b2933026425e44a08f9cb6158c753, type: 3}
+--- !u!114 &3716372014887153841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42d98e65ba369046b6ee5bc904d1cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SpaGuardian.Skill_ThirstyHuh
+  skillName: "\uBAA9 \uB9C8\uB974\uC9C0?"
+  slot: 2
+  jobLine: 1
+  cooldown: 8
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  waveRange: 3.5
+  waveHalfAngle: 30
+  waveDamage: 18
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  waveEffectPrefab: {fileID: 2697306864819329998, guid: c5dfefebaf3916344b9912705338a0f7, type: 3}
+  fishDotTotalDamage: 9
+  fishDotDuration: 3
+  fishDotTickInterval: 1
+  allyManaRestore: 15
+  eggComboHealAmount: 18
+  eggComboManaAmount: 18
+  eggComboDuration: 4
+--- !u!114 &4708398151272003141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38992803e01e1b41a2789db7fc5eb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SpaGuardian.Skill_HotSpringWater
+  skillName: "\uC628\uCC9C\uC218"
+  slot: 3
+  jobLine: 1
+  cooldown: 20
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  radius: 3
+  duration: 8
+  tickInterval: 1
+  enemyDamagePerTick: 6
+  enemyDefenseDebuffMultiplier: 1.25
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  attackPowerBuff: {fileID: 0}
+  criticalChanceBuff: {fileID: 0}
+  actionAndMoveSpeedBuff: {fileID: 0}
+  bonusDamageBuff: {fileID: 0}
+  allyBuffDuration: 8
+  hotSpringEffectPrefab: {fileID: 2511147634888331520, guid: 00c71bf2543b2ab49a09533b55387358, type: 3}
+--- !u!114 &698111733093990867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b564a52140a93bc4db0ac3056af66b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.Skills.SpaGuardian.Skill_HotSpringPrincess
+  skillName: "\uC628\uCC9C\uC758 \uACF5\uC8FC"
+  slot: 4
+  jobLine: 1
+  cooldown: 0
+  gaugeCost: 0
+  gaugeGainOnUse: 0
+  tickInterval: 1
+  hpTickAmount: 3
+  manaTickAmount: 3
+  healTickEffectPrefab: {fileID: 5810349512506823521, guid: db096be3999667a4f9168250ca5d23b6, type: 3}
+--- !u!114 &6163911781813372849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302959497640964077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17c248e9b44b95489ddb151cd55a6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AesikHaiman.DebugTools.DebugJobLineTester
+  skillManager: {fileID: 362780105961035826}
+  toggleJobLineKey: 106
