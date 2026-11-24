@@ -1165,6 +1165,8 @@ namespace AesikHaiman.EditorTools
         {
             SkillManager skillManager = player.GetComponent<SkillManager>();
             string[] keyLabels = { "Q", "W", "E", "R" };
+            // 슬롯 순서(Active/Robust/Intense/Transcend = QWER)에 맞춰 각 스킬 전용 VFX 아트를 아이콘으로 재사용
+            string[] iconArtPaths = { SplashArtPath, EggArtPath, WaveArtPath, HotSpringArtPath };
 
             const float slotSize = 64f;
             const float gap = 12f;
@@ -1197,6 +1199,23 @@ namespace AesikHaiman.EditorTools
                 Image iconImage = iconGO.GetComponent<Image>();
                 iconImage.color = new Color(0.15f, 0.15f, 0.15f, 0.6f);
                 iconImages[i] = iconImage;
+
+                // 스킬 전용 VFX 아트를 아이콘 그림으로 재사용 (배경 위, 쿨타임 오버레이 아래)
+                Sprite iconArtSprite = AssetDatabase.LoadAssetAtPath<Sprite>(iconArtPaths[i]);
+                if (iconArtSprite != null)
+                {
+                    GameObject iconArtGO = new GameObject("IconArt", typeof(RectTransform), typeof(Image));
+                    iconArtGO.transform.SetParent(slotGO.transform, false);
+                    RectTransform iconArtRect = iconArtGO.GetComponent<RectTransform>();
+                    iconArtRect.anchorMin = Vector2.zero;
+                    iconArtRect.anchorMax = Vector2.one;
+                    iconArtRect.offsetMin = new Vector2(4f, 4f);
+                    iconArtRect.offsetMax = new Vector2(-4f, -4f);
+                    Image iconArtImage = iconArtGO.GetComponent<Image>();
+                    iconArtImage.sprite = iconArtSprite;
+                    iconArtImage.color = Color.white;
+                    iconArtImage.preserveAspect = true;
+                }
 
                 GameObject overlayGO = new GameObject("CooldownOverlay", typeof(RectTransform), typeof(Image));
                 overlayGO.transform.SetParent(slotGO.transform, false);
