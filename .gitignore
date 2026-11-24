@@ -42,3 +42,6 @@ crashlytics-build.properties
 
 # 빌드 산출물(zip)은 git에 안 올리고 GitHub Release 첨부파일로 배포
 *.zip
+
+# Claude Code 세션 내부 파일 (프로젝트 내용 아님)
+.claude/

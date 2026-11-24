@@ -1153,9 +1153,130 @@ namespace AesikHaiman.EditorTools
             gameOverUISO.FindProperty("retryButton").objectReferenceValue = retryButton;
             gameOverUISO.ApplyModifiedProperties();
 
+            BuildSkillBarUI(canvasGO, player, font);
+
             BuildPausePanel(canvasGO, font);
 
             return canvasGO;
+        }
+
+        // ===== 스킬창(QWER) + 쿨타임 표시, 화면 하단 중앙, 4개 맵 공통 =====
+        private static void BuildSkillBarUI(GameObject canvasGO, GameObject player, Font font)
+        {
+            SkillManager skillManager = player.GetComponent<SkillManager>();
+            string[] keyLabels = { "Q", "W", "E", "R" };
+
+            const float slotSize = 64f;
+            const float gap = 12f;
+            float step = slotSize + gap;
+            float startX = -step * 1.5f;
+
+            Image[] iconImages = new Image[4];
+            Image[] cooldownOverlays = new Image[4];
+            Text[] cooldownTexts = new Text[4];
+            Text[] skillNameTexts = new Text[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject slotGO = new GameObject($"SkillSlot_{keyLabels[i]}", typeof(RectTransform));
+                slotGO.transform.SetParent(canvasGO.transform, false);
+                RectTransform slotRect = slotGO.GetComponent<RectTransform>();
+                slotRect.anchorMin = new Vector2(0.5f, 0f);
+                slotRect.anchorMax = new Vector2(0.5f, 0f);
+                slotRect.pivot = new Vector2(0.5f, 0f);
+                slotRect.anchoredPosition = new Vector2(startX + step * i, 24f);
+                slotRect.sizeDelta = new Vector2(slotSize, slotSize);
+
+                GameObject iconGO = new GameObject("Icon", typeof(RectTransform), typeof(Image));
+                iconGO.transform.SetParent(slotGO.transform, false);
+                RectTransform iconRect = iconGO.GetComponent<RectTransform>();
+                iconRect.anchorMin = Vector2.zero;
+                iconRect.anchorMax = Vector2.one;
+                iconRect.offsetMin = Vector2.zero;
+                iconRect.offsetMax = Vector2.zero;
+                Image iconImage = iconGO.GetComponent<Image>();
+                iconImage.color = new Color(0.15f, 0.15f, 0.15f, 0.6f);
+                iconImages[i] = iconImage;
+
+                GameObject overlayGO = new GameObject("CooldownOverlay", typeof(RectTransform), typeof(Image));
+                overlayGO.transform.SetParent(slotGO.transform, false);
+                RectTransform overlayRect = overlayGO.GetComponent<RectTransform>();
+                overlayRect.anchorMin = Vector2.zero;
+                overlayRect.anchorMax = Vector2.one;
+                overlayRect.offsetMin = Vector2.zero;
+                overlayRect.offsetMax = Vector2.zero;
+                Image overlayImage = overlayGO.GetComponent<Image>();
+                overlayImage.color = new Color(0f, 0f, 0f, 0.75f);
+                overlayImage.type = Image.Type.Filled;
+                overlayImage.fillMethod = Image.FillMethod.Radial360;
+                overlayImage.fillOrigin = (int)Image.Origin360.Top;
+                overlayImage.fillClockwise = false;
+                overlayImage.fillAmount = 0f;
+                cooldownOverlays[i] = overlayImage;
+
+                GameObject keyTextGO = new GameObject("KeyText", typeof(RectTransform), typeof(Text));
+                keyTextGO.transform.SetParent(slotGO.transform, false);
+                RectTransform keyTextRect = keyTextGO.GetComponent<RectTransform>();
+                keyTextRect.anchorMin = new Vector2(1f, 1f);
+                keyTextRect.anchorMax = new Vector2(1f, 1f);
+                keyTextRect.pivot = new Vector2(1f, 1f);
+                keyTextRect.anchoredPosition = new Vector2(-2f, -2f);
+                keyTextRect.sizeDelta = new Vector2(20f, 20f);
+                Text keyText = keyTextGO.GetComponent<Text>();
+                keyText.font = font;
+                keyText.fontSize = 14;
+                keyText.color = new Color(1f, 1f, 1f, 0.9f);
+                keyText.alignment = TextAnchor.UpperRight;
+                keyText.text = keyLabels[i];
+
+                GameObject cooldownTextGO = new GameObject("CooldownText", typeof(RectTransform), typeof(Text));
+                cooldownTextGO.transform.SetParent(slotGO.transform, false);
+                RectTransform cooldownTextRect = cooldownTextGO.GetComponent<RectTransform>();
+                cooldownTextRect.anchorMin = Vector2.zero;
+                cooldownTextRect.anchorMax = Vector2.one;
+                cooldownTextRect.offsetMin = Vector2.zero;
+                cooldownTextRect.offsetMax = Vector2.zero;
+                Text cooldownText = cooldownTextGO.GetComponent<Text>();
+                cooldownText.font = font;
+                cooldownText.fontSize = 22;
+                cooldownText.fontStyle = FontStyle.Bold;
+                cooldownText.color = Color.white;
+                cooldownText.alignment = TextAnchor.MiddleCenter;
+                cooldownText.text = "";
+                cooldownTexts[i] = cooldownText;
+
+                GameObject nameTextGO = new GameObject("SkillNameText", typeof(RectTransform), typeof(Text));
+                nameTextGO.transform.SetParent(slotGO.transform, false);
+                RectTransform nameTextRect = nameTextGO.GetComponent<RectTransform>();
+                nameTextRect.anchorMin = new Vector2(0.5f, 0f);
+                nameTextRect.anchorMax = new Vector2(0.5f, 0f);
+                nameTextRect.pivot = new Vector2(0.5f, 1f);
+                nameTextRect.anchoredPosition = new Vector2(0f, -4f);
+                nameTextRect.sizeDelta = new Vector2(96f, 18f);
+                Text nameText = nameTextGO.GetComponent<Text>();
+                nameText.font = font;
+                nameText.fontSize = 11;
+                nameText.color = new Color(1f, 1f, 1f, 0.85f);
+                nameText.alignment = TextAnchor.MiddleCenter;
+                nameText.text = "";
+                skillNameTexts[i] = nameText;
+            }
+
+            SkillBarUI skillBarUI = canvasGO.AddComponent<SkillBarUI>();
+            SerializedObject so = new SerializedObject(skillBarUI);
+            so.FindProperty("skillManager").objectReferenceValue = skillManager;
+            CopyArray(so.FindProperty("iconImages"), iconImages);
+            CopyArray(so.FindProperty("cooldownOverlays"), cooldownOverlays);
+            CopyArray(so.FindProperty("cooldownTexts"), cooldownTexts);
+            CopyArray(so.FindProperty("skillNameTexts"), skillNameTexts);
+            so.ApplyModifiedProperties();
+        }
+
+        private static void CopyArray(SerializedProperty arrayProp, Object[] values)
+        {
+            arrayProp.arraySize = values.Length;
+            for (int i = 0; i < values.Length; i++)
+                arrayProp.GetArrayElementAtIndex(i).objectReferenceValue = values[i];
         }
 
         // ===== 11주차 스프린트: ESC 일시정지 패널 (평소엔 꺼져있음, 4개 맵 공통) =====
